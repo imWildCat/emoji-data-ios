@@ -8,15 +8,15 @@
 
 import Foundation
 
-class EmojiManager {
+public class EmojiManager {
   
-  var emojis: [Emoji] = []
-  var shortNameForUnified: [String:[Emoji]] = [:]
-  var emojisForCategory: [EmojiCategory:[Emoji]] = [:]
-  var emojiForUnified: [String:[Emoji]] = [:]
-  var emojiForUnicode: [String: Emoji] = [:]
+  public var emojis: [Emoji] = []
+  public var shortNameForUnified: [String:[Emoji]] = [:]
+  public var emojisForCategory: [EmojiCategory:[Emoji]] = [:]
+  public var emojiForUnified: [String:[Emoji]] = [:]
+  public var emojiForUnicode: [String: Emoji] = [:]
 
-  init() {
+  public init() {
 
     guard let emojisListFilePath = Bundle(for: EmojiManager.self).path(forResource: "emojilist", ofType: "json") else {
       print("emojilist.json was not found")
@@ -139,7 +139,7 @@ class EmojiManager {
     }
   }
   
-  func getEmojisForCategory(_ category: EmojiCategory) -> [Emoji]? {
+  public func getEmojisForCategory(_ category: EmojiCategory) -> [Emoji]? {
     return emojisForCategory[category]
   }
 }
